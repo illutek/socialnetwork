@@ -1,0 +1,26 @@
+// ===========================
+// @@ Navigation
+// ===========================
+
+.navbar-default
+  .navbar-brand
+    padding: 0 15px
+    &::before
+      content: url("../images/icon_social_network.png")
+      position: relative
+      left: 0
+      top: 10px
+    color: $text-color
+    &:hover
+      color: white
+  .navbar-nav
+    // mediaquery
+    // margin-left: 50px
+    &> li > a
+      color: $text-color
+      &:hover
+        color: white
+
+@media (min-width: 768px)
+  .navbar-nav
+    margin-left: 50px
