@@ -7692,6 +7692,10 @@ h1 {
   font-size: 2em;
 }
 
+.margintop-45 {
+  margin-top: 45px;
+}
+
 .navbar-default .navbar-brand {
   padding: 0 15px;
   color: #d8dbdf;
@@ -7726,9 +7730,12 @@ h1 {
   font-size: 0.75em;
 }
 
+.alert, .panels, .btn, .form-control {
+  border-radius: 0px;
+}
+
 .panel {
   background-color: #3a4352;
-  border-radius: 0px;
 }
 
 .panel-default {
@@ -7738,6 +7745,10 @@ h1 {
 .table {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.btn-default {
+  color: white;
 }
 
 hr {

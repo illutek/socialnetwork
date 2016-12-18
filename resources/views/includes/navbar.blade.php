@@ -20,13 +20,18 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Profile</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Register</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">User <span class="caret"></span></a>
 
-                            <li><a href="#">Logout</a></li>
+                        <ul class="dropdown-menu">
+                            @if(!auth()->check())
+                                <li><a href="{{ route('loginform') }}">Login</a></li>
+                                <li><a href="{{ route('register.get') }}">Register</a></li>
+                            @else
+                                <li><a href="{{ route('logout') }}">Logout</a></li>
+                            @endif
                         </ul>
                     </li>
                 </ul>

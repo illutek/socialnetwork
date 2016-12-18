@@ -13,3 +13,15 @@
 
 // Home Routes
 Route::get('/', 'HomeController@index')->name('index');
+
+
+// Auth Login
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginform');
+Route::post('login', 'Auth\LoginController@login')->name('login');
+
+// Auth Logout
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Auth Register
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register.get');
+Route::post('register', 'Auth\RegisterController@register')->name('register.post');

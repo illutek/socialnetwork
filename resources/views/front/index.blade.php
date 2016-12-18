@@ -16,7 +16,7 @@
                                     <tr>
                                         <th>Age</th>
                                         <th>Username</th>
-                                        <th>Sex</th>
+                                        <th>Gender</th>
                                     </tr>
                                     <tr>
                                         <td>55</td>
