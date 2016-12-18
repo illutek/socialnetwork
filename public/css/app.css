@@ -7726,6 +7726,14 @@ h1 {
   }
 }
 
+.avatar-img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  float: left;
+  margin-right: 25px;
+}
+
 .copy-text {
   font-size: 0.75em;
 }

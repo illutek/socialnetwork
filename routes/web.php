@@ -25,3 +25,7 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 // Auth Register
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register.get');
 Route::post('register', 'Auth\RegisterController@register')->name('register.post');
+
+// Profile
+Route::get('profile', 'UserController@profile')->name('profile');
+Route::post('profile', 'UserController@updateAvatar');

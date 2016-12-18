@@ -28,10 +28,6 @@
                     {!! Form::email('email', null, ['class' => 'form-control']) !!}
                 </p>
                 <p class="form-group">
-                    {!! Form::label('avatar', 'Avatar (test)') !!}
-                    {!! Form::text('avatar', null, ['class' => 'form-control']) !!}
-                </p>
-                <p class="form-group">
                     {!! Form::label('gender', 'Gender') !!}
                     {!! Form::select('gender', ['Man', 'Female'], null,['class' => 'form-control']) !!}
                 </p>
