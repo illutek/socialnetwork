@@ -6,7 +6,7 @@
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h2>I have a account</h2>
+                <h2>I have an account</h2>
 
                 {!! Form::open(['route' => 'loginform']) !!}
 
