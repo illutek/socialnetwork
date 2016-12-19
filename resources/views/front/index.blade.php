@@ -29,7 +29,7 @@
                                                     <th>Gender</th>
                                                 </tr>
                                                 <tr>
-                                                    <td>55</td>
+                                                    <td>{{ Auth::user()->present()->accountAge }}</td>
                                                     <td>{{ Auth::user()->username }}</td>
                                                     <td>{{ Auth::user()->gender }}</td>
                                                 </tr>
