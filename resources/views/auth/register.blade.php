@@ -12,7 +12,7 @@
 
                 {!! Form::open(['route' => 'register.get']) !!}
                 <p class="form-group">
-                    {!! Form::label('username') !!}
+                    {!! Form::label('username', 'Your Twitter username') !!}
                     {!! Form::text('username',null, ['class' => 'form-control']) !!}
                 </p>
                 <p class="form-group">

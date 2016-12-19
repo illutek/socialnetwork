@@ -12,9 +12,6 @@
 @include('includes.navbar')
 <div class="container">
     @yield('content')
-
-</div>
-<div class="container">
     @include('includes.footer')
 </div>
 

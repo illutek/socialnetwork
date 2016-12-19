@@ -7752,6 +7752,10 @@ h1 {
   margin-right: 15px;
 }
 
+.panel-twitter {
+  height: 250px;
+}
+
 .copy-text {
   font-size: 0.75em;
 }

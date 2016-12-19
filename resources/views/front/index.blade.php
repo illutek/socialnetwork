@@ -3,9 +3,20 @@
 @section('title', 'Social Home')
 
 @section('content')
-
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-9 col-md-push-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1>De home pagina</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur
+                        cupiditate dicta eaque explicabo laudantium, maxime nisi nobis sequi vitae?
+                        Architecto aspernatur ea facere natus obcaecati optio ratione repellat,
+                        temporibus?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-md-pull-9">
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default">
@@ -16,9 +27,10 @@
                                         <li><a href="{{ route('login') }}">Login</a></li>
                                         <li><a href="{{ route('register.get') }}">Register</a></li>
                                     </ul>
-                                    @else
+                                @else
                                     <div class="col-md-12">
-                                        <img class="avatar-img" src="{{ asset('uploads/avatars/' . Auth::user()->avatar) }}">
+                                        <img class="avatar-img"
+                                             src="{{ asset('uploads/avatars/' . Auth::user()->avatar) }}">
                                     </div>
                                     <div class="col-md-12">
                                         <div class="table-responsive">
@@ -31,40 +43,32 @@
                                                 <tr>
                                                     <td>{{ Auth::user()->present()->accountAge }}</td>
                                                     <td>{{ Auth::user()->username }}</td>
-                                                    <td>{{ Auth::user()->gender }}</td>
+                                                    <td>{{ Auth::user()->present()->accountGender }}</td>
                                                 </tr>
                                             </table>
                                         </div>
                                     </div>
-                                    @endif
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h3>Twitter tweets</h3>
-                            <p>Tweets van '@laravelnews'</p>
+                    @if(auth()->check())
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-twitter">
+                                <h3>Tweets by {{ Auth::user()->username }}</h3>
+                                <a class="twitter-timeline" data-height="300" data-theme="dark"
+                                   href="https://twitter.com/{{ Auth::user()->username }}">Tweets by TwitterDev</a>
+                                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
                         </div>
-                    </div>
+                    @else
+
+                    @endif
                 </div>
 
-            </div>
 
-        </div>
-        <div class="col-md-9">
-            <div class="">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h1>De home pagina</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur
-                            cupiditate dicta eaque explicabo laudantium, maxime nisi nobis sequi vitae?
-                            Architecto aspernatur ea facere natus obcaecati optio ratione repellat,
-                            temporibus?
-                        </p>
-                    </div>
-                </div>
             </div>
 
         </div>
