@@ -7694,6 +7694,16 @@ h1 {
   font-size: 2em;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
 .margintop-45 {
   margin-top: 45px;
 }

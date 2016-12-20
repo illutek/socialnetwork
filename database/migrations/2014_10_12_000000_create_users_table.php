@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username', 64)->unique();
-            $table->string('twitter', 64)->unique();
+            $table->string('twitter')->default('dries');
             $table->date('dob');
             $table->string('name');
             $table->boolean('gender');

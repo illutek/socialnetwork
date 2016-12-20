@@ -23,10 +23,12 @@
                         <div class="panel-body">
                             <div class="row">
                                 @if(!auth()->check())
-                                    <ul>
-                                        <li><a href="{{ route('login') }}">Login</a></li>
-                                        <li><a href="{{ route('register.get') }}">Register</a></li>
-                                    </ul>
+                                    <div class="col-md-12">
+                                        <h3>Create an account</h3>
+                                        <a href="{{ route('register.get') }}">Register</a>
+                                        <h3>Login</h3>
+                                        <a href="{{ route('login') }}">Login</a>
+                                    </div>
                                 @else
                                     <div class="col-md-12 panel-profile__avatar">
                                         <img class="avatar-img"
@@ -62,6 +64,7 @@
                     @if(auth()->check())
                         <div class="panel panel-default">
                             <div class="panel-body panel-twitter__body">
+                                {{--{{ Auth::user()->twitter or 'formvalidation' }}--}}
                                 <a class="twitter-timeline" data-height="300" data-theme="dark"
                                    href="https://twitter.com/{{ Auth::user()->twitter }}">Tweets by TwitterDev</a>
                                 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
