@@ -1,6 +1,18 @@
 
-// Body
-$body-bg: #343d4d;
+
+/* Coolors Exported Palette - coolors.co/072134-374a67-386fa4-456990-ee4266 */
+
+/* RGB */
+$navbar-default-bg: rgba(7, 33, 52, 1);
+$body-bg: rgba(55, 74, 103, 1);
+$color3: rgba(56, 111, 164, 1);
+$color4: rgba(69, 105, 144, 1);
+$color5: rgba(238, 66, 102, 1);
+
+// Panels
+$panel-default-heading-bg: $color4;
+
+
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
@@ -22,8 +34,6 @@ $font-size-base: 16px;
 $line-height-base: 1.6;
 $text-color: #d8dbdf;
 
-// Navbar
-$navbar-default-bg: #4b5874;
 
 // Buttons
 $btn-default-color: $text-color;
@@ -33,8 +43,7 @@ $input-border: lighten($text-color, 40%);
 $input-border-focus: lighten($brand-primary, 25%);
 $input-color-placeholder: lighten($text-color, 30%);
 
-// Panels
-$panel-default-heading-bg: #3a4352;
+
 
 $secondary-color: #3a4352;
 

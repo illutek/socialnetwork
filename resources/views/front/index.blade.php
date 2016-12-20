@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-3 col-md-pull-9">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 panel-profile">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="row">
@@ -28,11 +28,11 @@
                                         <li><a href="{{ route('register.get') }}">Register</a></li>
                                     </ul>
                                 @else
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 panel-profile__avatar">
                                         <img class="avatar-img"
                                              src="{{ asset('uploads/avatars/' . Auth::user()->avatar) }}">
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 panel-profile__global">
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <tr>
@@ -47,27 +47,29 @@
                                                 </tr>
                                             </table>
                                         </div>
+                                        <div class="profile__global-bio">
+                                            <p>{{ Auth::user()->bio }}</p>
+                                        </div>
                                     </div>
                                 @endif
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
+                {{-- end panel-profile--}}
+
+                <div class="col-md-12 panel-twitter">
                     @if(auth()->check())
                         <div class="panel panel-default">
-                            <div class="panel-body panel-twitter">
-                                <h3>Tweets by {{ Auth::user()->username }}</h3>
+                            <div class="panel-body panel-twitter__body">
                                 <a class="twitter-timeline" data-height="300" data-theme="dark"
-                                   href="https://twitter.com/{{ Auth::user()->username }}">Tweets by TwitterDev</a>
+                                   href="https://twitter.com/{{ Auth::user()->twitter }}">Tweets by TwitterDev</a>
                                 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                             </div>
                         </div>
-                    @else
-
                     @endif
                 </div>
-
+                {{--end panel-twitter--}}
 
             </div>
 

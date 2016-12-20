@@ -12,8 +12,12 @@
 
                 {!! Form::open(['route' => 'register.get']) !!}
                 <p class="form-group">
-                    {!! Form::label('username', 'Your Twitter username') !!}
+                    {!! Form::label('username', 'Username') !!}
                     {!! Form::text('username',null, ['class' => 'form-control']) !!}
+                </p>
+                <p class="form-group">
+                    {!! Form::label('twitter', 'Your Twitter username') !!}
+                    {!! Form::text('twitter',null, ['class' => 'form-control']) !!}
                 </p>
                 <p class="form-group">
                     {!! Form::label('dob', 'Date of Birth') !!}
@@ -30,6 +34,10 @@
                 <p class="form-group">
                     {!! Form::label('gender', 'Gender') !!}
                     {!! Form::select('gender', ['Man', 'Female'], null,['class' => 'form-control']) !!}
+                </p>
+                <p class="form-group">
+                    {!! Form::label('bio', 'Bio') !!}
+                    {!! Form::textarea('bio', null, ['class' => 'form-control']) !!}
                 </p>
                 <p class="form-group">
                     {!! Form::label('password', 'Password') !!}
