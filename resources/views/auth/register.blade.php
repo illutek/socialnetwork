@@ -48,7 +48,7 @@
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </p>
                 <p class="form-group margintop-45">
-                    {!! Form::submit('Create a new account', ['class' => 'btn btn-primary btn-block']) !!}
+                    {!! Form::submit('Next', ['class' => 'btn btn-primary btn-block']) !!}
                 </p>
                 {!! Form::close() !!}
 

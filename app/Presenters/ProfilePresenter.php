@@ -20,12 +20,18 @@ class ProfilePresenter extends Presenter
         return $this->dob->diff(Carbon::now())->format('%y');
     }
 
-    public function accountGender(){
+    public function accountGender()
+    {
         /**
          * @return string
          * Gender afprinten
          */
 
         return ($this->gender == 0) ? 'Man' : 'Female';
+    }
+
+    public function dateFormat()
+    {
+        //
     }
 }

@@ -38,6 +38,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
+
     /**
      * The GenderPresenter
      * the Laracasts\Presenter\PresentableTrait trait, which will automatically instantiate your presenter class.

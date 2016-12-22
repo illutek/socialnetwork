@@ -66,7 +66,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'username' => $data['username'],
-            'twitter' => $data['twitter'],
+            'twitter' => (empty($data['twitter'])) ? 'twitterdev' : $data['twitter'],
             'dob' => $data['dob'],
             'name' => $data['name'],
             'gender' => $data['gender'],

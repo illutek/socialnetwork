@@ -48,6 +48,8 @@
                                                     <td>{{ Auth::user()->present()->accountGender }}</td>
                                                 </tr>
                                             </table>
+                                            <p>Birthday: {{ date('d M Y',strtotime(Auth::user()->dob))  }}</p>
+
                                         </div>
                                         <div class="profile__global-bio">
                                             <p>{{ Auth::user()->bio }}</p>

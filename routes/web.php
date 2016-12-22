@@ -29,3 +29,6 @@ Route::post('register', 'Auth\RegisterController@register')->name('register.post
 // Profile
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::post('profile', 'UserController@updateAvatar');
+
+// Posts
+Route::resource('posts', 'BlogController');
