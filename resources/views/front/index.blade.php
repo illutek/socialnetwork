@@ -4,19 +4,24 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-9 col-md-push-3">
+        <div class="col-md-8 col-md-push-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h1>De home pagina</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur
-                        cupiditate dicta eaque explicabo laudantium, maxime nisi nobis sequi vitae?
-                        Architecto aspernatur ea facere natus obcaecati optio ratione repellat,
-                        temporibus?
-                    </p>
+                    @if(auth()->check())
+                        @include(('includes.formPostCreate'))
+                    @endif
+
+                    <div class="anonymous-content">
+                        <h1>Welcome to Social Network</h1>
+                        <p>Connect with your friends — and other fascinating people. Get in-the-moment updates on the
+                            things that interest you. And watch events unfold, in real time, from every angle.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-md-pull-9">
+        <div class="col-md-4 col-md-pull-8">
             <div class="row">
                 <div class="col-md-12 panel-profile">
                     <div class="panel panel-default">
@@ -24,10 +29,12 @@
                             <div class="row">
                                 @if(!auth()->check())
                                     <div class="col-md-12">
-                                        <h3>Create an account</h3>
-                                        <a href="{{ route('register.get') }}">Register</a>
-                                        <h3>Login</h3>
-                                        <a href="{{ route('login') }}">Login</a>
+                                        <h3>New to The Network</h3>
+                                        <a href="{{ route('register.get') }}" class="btn btn-warning">Sign Up for Social Network!</a>
+                                        <hr>
+
+                                            @include('includes.formLogin')
+
                                     </div>
                                 @else
                                     <div class="col-md-12 panel-profile__avatar">

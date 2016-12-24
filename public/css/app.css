@@ -7690,6 +7690,11 @@ button.close {
   }
 }
 
+body.body-anonymous {
+  background: url("../images/people_001.jpg") no-repeat;
+  background-size: cover;
+}
+
 h1 {
   font-size: 2em;
 }
@@ -7702,6 +7707,10 @@ a {
 a:hover {
   color: white;
   text-decoration: underline;
+}
+
+.margintop-25 {
+  margin-top: 25px;
 }
 
 .margintop-45 {
@@ -7769,6 +7778,18 @@ a:hover {
   width: 32px;
   height: 32px;
   margin-right: 15px;
+}
+
+.group-image-save {
+  margin-top: 25px;
+}
+
+.image-upload input[type="file"] {
+  display: none;
+}
+
+.anonymous-content p {
+  font-size: 1.5em;
 }
 
 .copy-text {

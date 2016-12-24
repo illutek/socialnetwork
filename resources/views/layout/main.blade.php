@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>@yield('title')</title>
 </head>
-<body>
-@include('includes.navbar')
-<div class="container">
-    @yield('content')
-    @include('includes.footer')
-</div>
+@if(!auth()->check())
+    <body class="body-anonymous">
+    @endif
+    <body>
+    @include('includes.navbar')
+    <div class="container">
+        @yield('content')
+        @include('includes.footer')
+    </div>
 
-<script src="{{ asset('js/app.js') }}"></script>
-</body>
+    <script src="{{ asset('js/app.js') }}"></script>
+    </body>
 </html>

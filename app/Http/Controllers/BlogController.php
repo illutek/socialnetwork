@@ -44,6 +44,7 @@ class BlogController extends Controller
         $image = $request->file('post_image');
         $filename = time() . '.' . $image->getClientOriginalExtension();
 
+
         Image::make($image)->resize(600,400)->save(public_path('img/post/' . $filename));
 
         $post->post_image = $filename;
