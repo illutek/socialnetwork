@@ -38,16 +38,19 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $post = new Post();
-
         $post->fill($request->only('body'));
 
+        $image_path= 'img/post/';
         $image = $request->file('post_image');
         $filename = time() . '.' . $image->getClientOriginalExtension();
+        $path = public_path($image_path . $filename);
 
 
-        Image::make($image)->resize(600,400)->save(public_path('img/post/' . $filename));
+        Image::make($image->getRealPath())
+            ->resize(600,400)
+            ->save($path);
 
-        $post->post_image = $filename;
+        $post->post_image = $image_path . $filename;
 
         $request->user()->posts()->save($post);
 
