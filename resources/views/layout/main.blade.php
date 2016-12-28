@@ -19,5 +19,15 @@
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $.backstretch([
+            "pot-holder.jpg",
+            "coffee.jpg",
+            "dome.jpg"
+        ], {
+            fade: 750,
+            duration: 4000
+        });
+    </script>
     </body>
 </html>

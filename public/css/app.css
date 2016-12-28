@@ -7784,8 +7784,18 @@ a:hover {
   margin-top: 25px;
 }
 
+.image-upload img {
+  cursor: pointer;
+  margin: 6px 0 0 -70px;
+}
+
 .image-upload input[type="file"] {
   display: none;
+}
+
+.post-content .post-content__info {
+  font-size: 0.75em;
+  color: #374a67;
 }
 
 .anonymous-content p {
@@ -7816,6 +7826,11 @@ a:hover {
 
 .btn-default {
   color: white;
+}
+
+.btn-primary {
+  background-color: #386fa4;
+  border-color: #386fa4;
 }
 
 hr {
