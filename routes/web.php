@@ -12,7 +12,7 @@
 */
 
 // Home Routes
-Route::get('/', 'HomeController@index')->name('index');
+Route::get('/', 'BlogController@index')->name('index');
 
 
 // Auth Login

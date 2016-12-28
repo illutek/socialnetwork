@@ -1,7 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Stefan
- * Date: 26/12/2016
- * Time: 14:47
- */
+
+namespace App\Presenters;
+
+use Laracasts\Presenter\Presenter;
+
+
+class PostPresenter extends Presenter
+{
+
+    public function createdAt() {
+
+        return $this->created_at->format('d/m/Y');
+    }
+
+}
