@@ -25,7 +25,7 @@
                         @if(!auth()->check())
                             User <span class="caret"></span>
                         @else
-                            <img class="avatar-img" src="{{ asset('uploads/avatars/' . Auth::user()->avatar) }}"
+                            <img class="avatar-img avatar-img-small" src="{{ asset('uploads/avatars/' . Auth::user()->avatar) }}"
                                  alt="">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         @endif

@@ -7774,7 +7774,7 @@ a:hover {
   height: 120px;
 }
 
-.navbar-nav .avatar-img {
+.avatar-img-small {
   width: 32px;
   height: 32px;
   margin-right: 15px;
@@ -7791,6 +7791,10 @@ a:hover {
 
 .image-upload input[type="file"] {
   display: none;
+}
+
+.post-content img {
+  margin-top: 15px;
 }
 
 .post-content .post-content__info {

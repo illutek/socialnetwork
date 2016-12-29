@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>@yield('title')</title>
 </head>
-@if(!auth()->check())
-    <body class="body-anonymous">
-    @endif
+
     <body>
     @include('includes.navbar')
     <div class="container">
@@ -19,15 +17,20 @@
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        $.backstretch([
-            "pot-holder.jpg",
-            "coffee.jpg",
-            "dome.jpg"
-        ], {
-            fade: 750,
-            duration: 4000
-        });
-    </script>
+    @if(!auth()->check())
+        <script>
+            $.backstretch([
+                "images/people_001.jpg",
+                "images/people_002.jpg",
+                "images/people_003.jpg",
+                "images/people_004.jpg",
+                "images/people_005.jpg",
+                "images/people_006.jpg"
+            ], {
+                fade: 750,
+                duration: 4000
+            });
+        </script>
+    @endif
     </body>
 </html>
