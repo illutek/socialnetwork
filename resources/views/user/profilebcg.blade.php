@@ -6,6 +6,7 @@
     <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
             <div class="panel-body">
+                <img class="user-bcg-img" src="{{ asset('uploads/bcg/' . $user->bcg) }}" alt="{{ $user->bcg }}">
                 <h2>{{ $user->name }}</h2>
                 {!!  Form::open(['route' => 'profilebcg', 'files'=>true]) !!}
 

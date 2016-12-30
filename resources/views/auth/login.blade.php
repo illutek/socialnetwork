@@ -22,6 +22,7 @@
                     {!! Form::submit('Submit', ['class' => 'btn btn-primary btn-block']) !!}
                 </p>
                 {!! Form::close() !!}
+                <a href="{{ route('register.get') }}"><h3>No account yet</h3></a>
             </div>
         </div>
     </div>

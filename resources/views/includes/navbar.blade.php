@@ -25,7 +25,8 @@
                         @if(!auth()->check())
                             User <span class="caret"></span>
                         @else
-                            <img class="avatar-img avatar-img-small" src="{{ asset('uploads/avatars/' . Auth::user()->avatar) }}"
+                            <img class="avatar-img avatar-img-small"
+                                 src="{{ asset('uploads/avatars/' . Auth::user()->avatar) }}"
                                  alt="">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         @endif
@@ -36,7 +37,9 @@
                             <li><a href="{{ route('loginform') }}">Login</a></li>
                             <li><a href="{{ route('register.get') }}">Register</a></li>
                         @else
-                            <li><a href="{{ route('profile') }}">Profile</a></li>
+                            <li><a href="{{ route('myposts') }}">My Posts</a></li>
+                            <li><a href="{{ route('profile') }}">My Avatar</a></li>
+                            <li><a href="{{ route('profilebcg') }}">My Background</a></li>
                             <li><a href="{{ route('logout') }}">Logout</a></li>
                         @endif
                     </ul>

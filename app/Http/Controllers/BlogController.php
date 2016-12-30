@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Image;
 use Illuminate\Http\Request;
+use Auth;
 
 class BlogController extends Controller
 {
@@ -18,6 +19,17 @@ class BlogController extends Controller
         $posts = Post::orderBy('id', 'decs')->get();
         return view('front.index', compact('posts'));
     }
+
+    public function userPosts(){
+        $posts = auth()
+            ->user()
+            ->posts()
+            ->orderBy('id', 'decs')
+            ->get();
+
+        return view('front.index', compact('posts'));
+    }
+
 
     /**
      * Show the form for creating a new resource.

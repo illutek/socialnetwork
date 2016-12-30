@@ -7780,6 +7780,11 @@ a:hover {
   margin-right: 15px;
 }
 
+.user-bcg-img {
+  width: 220px;
+  height: auto;
+}
+
 .group-image-save {
   margin-top: 25px;
 }
