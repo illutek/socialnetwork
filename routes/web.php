@@ -14,6 +14,7 @@
 // Home Routes
 Route::get('/', 'BlogController@index')->name('index');
 
+Route::get('myposts' ,'BlogController@userposts')->name('myposts');
 
 // Auth Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginform');
@@ -29,6 +30,10 @@ Route::post('register', 'Auth\RegisterController@register')->name('register.post
 // Profile
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::post('profile', 'UserController@updateAvatar');
+
+Route::get('profilebcg', 'UserController@profilebcg')->name('profilebcg');
+Route::post('profilebcg', 'UserController@updateBackground');
+
 
 // Posts
 Route::resource('posts', 'BlogController');

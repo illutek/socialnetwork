@@ -31,6 +31,12 @@
                 duration: 4000
             });
         </script>
+        @else
+        <script>
+            $.backstretch([
+                "{{ 'uploads/bcg/'.  (Auth::user()->bcg) }}"
+            ]);
+        </script>
     @endif
     </body>
 </html>

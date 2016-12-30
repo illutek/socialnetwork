@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->text('bio');
             $table->string('email')->unique();
             $table->string('avatar')->default('default.jpg');
+            $table->string('bcg')->default('none.jpg');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

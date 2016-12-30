@@ -27,4 +27,24 @@ class UserController extends Controller
         }
         return view('user.profile', ['user' => Auth::user()]);
     }
+
+    public function profilebcg()
+    {
+        return view('user.profilebcg', ['user' => Auth::user()]);
+    }
+
+    public function updateBackground(Request $request){
+
+        if($request->hasFile('bcg')){
+            $bcg = $request->file('bcg');
+            $bcgname = time() . '.' . $bcg->getClientOriginalExtension();
+            Image::make($bcg)->save(public_path('uploads/bcg/' . $bcgname));
+
+            $user = Auth::user();
+            $user->bcg = $bcgname;
+            $user->save();
+        }
+
+        return view('user.profilebcg', ['user' => Auth::user()]);
+    }
 }
