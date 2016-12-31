@@ -11,7 +11,7 @@
 
     <body>
     @include('includes.navbar')
-    <div class="container">
+    <div class="container margintop-main_content">
         @yield('content')
         @include('includes.footer')
     </div>

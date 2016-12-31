@@ -23,7 +23,7 @@
                                 Post Date: {{ $post->present()->createdAt }}
                                 </span><br>
                                             {{ $post->body }}
-                                            <img src="{{ asset($post->post_image) }}" alt="" width="100%">
+                                            <img src="{{ asset($post->post_image) }}" alt="" width="100%" height="auto">
                                             <hr>
                                         @endforeach
                                     </div>

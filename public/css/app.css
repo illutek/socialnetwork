@@ -7811,6 +7811,10 @@ a:hover {
   font-size: 1.5em;
 }
 
+.margintop-main_content {
+  margin-top: 70px;
+}
+
 .copy-text {
   font-size: 0.75em;
 }
