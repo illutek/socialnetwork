@@ -18,7 +18,9 @@
                                     <div class="post-content">
                                         @foreach($posts as $post)
                                             <span class="post-content__info">
-                                                <span class="info-username">{{ $post->user->name }}</span>
+                                                <span class="info-username">
+                                                    <a href="{{ route('myposts', $post->user_id) }}">{{ $post->user->name }}</a>
+                                                </span>
                                                 &commat;{{ $post->user->username }} -
                                                 Post Date: {{ $post->present()->createdAt }}
                                             </span><br>

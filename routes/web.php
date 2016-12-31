@@ -14,7 +14,7 @@
 // Home Routes
 Route::get('/', 'BlogController@index')->name('index');
 
-Route::get('myposts' ,'BlogController@userposts')->name('myposts');
+Route::get('myposts/{user_id}' ,'BlogController@userPosts')->name('myposts');
 
 // Auth Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginform');

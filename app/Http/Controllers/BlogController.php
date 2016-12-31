@@ -20,14 +20,9 @@ class BlogController extends Controller
         return view('front.index', compact('posts'));
     }
 
-    public function userPosts(){
-        $posts = auth()
-            ->user()
-            ->posts()
-            ->orderBy('id', 'decs')
-            ->get();
+    public function userPosts($user_id){
 
-        return view('front.index', compact('posts'));
+        return view('front.index')->with('posts', Post::where('user_id' ,$user_id)->orderBy('id', 'decs')->get());
     }
 
 
@@ -59,7 +54,7 @@ class BlogController extends Controller
 
 
         Image::make($image->getRealPath())
-            ->resize(600,400)
+            ->resize(600, null)
             ->save($path);
 
         $post->post_image = $image_path . $filename;

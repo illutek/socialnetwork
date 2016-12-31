@@ -37,7 +37,6 @@
                             <li><a href="{{ route('loginform') }}">Login</a></li>
                             <li><a href="{{ route('register.get') }}">Register</a></li>
                         @else
-                            <li><a href="{{ route('myposts') }}">My Posts</a></li>
                             <li><a href="{{ route('profile') }}">My Avatar</a></li>
                             <li><a href="{{ route('profilebcg') }}">My Background</a></li>
                             <li><a href="{{ route('logout') }}">Logout</a></li>

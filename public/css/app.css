@@ -7811,6 +7811,16 @@ a:hover {
   font-weight: bold;
 }
 
+.post-content .post-content__info .info-username a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #072134;
+}
+
+.post-content .post-content__info .info-username a:hover {
+  text-decoration: underline;
+}
+
 .anonymous-content p {
   font-size: 1.5em;
 }
