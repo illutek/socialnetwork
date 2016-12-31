@@ -18,16 +18,17 @@
                                     <div class="post-content">
                                         @foreach($posts as $post)
                                             <span class="post-content__info">
-                                    {{ $post->user->name }}
-                                    &commat;{{ $post->user->username }} -
-                                Post Date: {{ $post->present()->createdAt }}
-                                </span><br>
+                                                <span class="info-username">{{ $post->user->name }}</span>
+                                                &commat;{{ $post->user->username }} -
+                                                Post Date: {{ $post->present()->createdAt }}
+                                            </span><br>
                                             {{ $post->body }}
                                             <img src="{{ asset($post->post_image) }}" alt="" width="100%" height="auto">
                                             <hr>
                                         @endforeach
                                     </div>
                                 @else
+                                    {{--Content als er niet is ingelogd--}}
                                     <div class="anonymous-content">
                                         <h1>Welcome to Social Network</h1>
                                         <p>Connect with your friends — and other fascinating people. Get in-the-moment
@@ -38,7 +39,6 @@
                                         </p>
                                     </div>
                                 @endif
-
 
                             </div>
                         </div>
@@ -63,37 +63,11 @@
                                                                     Up for Social
                                                                     Network!</a>
                                                                 <hr>
-
                                                                 @include('includes.formLogin')
-
                                                             </div>
                                                         @else
-                                                            <div class="col-md-12 panel-profile__avatar">
-                                                                <img class="avatar-img"
-                                                                     src="{{ asset('uploads/avatars/' . Auth::user()->avatar) }}">
-                                                            </div>
-                                                            <div class="col-md-12 panel-profile__global">
-                                                                <div class="table-responsive">
-                                                                    <table class="table">
-                                                                        <tr>
-                                                                            <th>Age</th>
-                                                                            <th>Username</th>
-                                                                            <th>Gender</th>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>{{ Auth::user()->present()->accountAge }}</td>
-                                                                            <td>{{ Auth::user()->username }}</td>
-                                                                            <td>{{ Auth::user()->present()->accountGender }}</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                    <p>
-                                                                        Birthday: {{ date('d M Y',strtotime(Auth::user()->dob))  }}</p>
-
-                                                                </div>
-                                                                <div class="profile__global-bio">
-                                                                    <p>{{ Auth::user()->bio }}</p>
-                                                                </div>
-                                                            </div>
+                                                            {{--Panel login User--}}
+                                                            @include('includes.user-panel')
                                                         @endif
                                                     </div>
                                                 </div>
@@ -104,19 +78,9 @@
                                 </div>
                                 {{--second sidebar--}}
                                 @if(auth()->check())
+                                    {{--Twitter panel by default twitterDev user--}}
                                     <div class="col-md-3 panel-twitter">
-
-                                        <div class="panel panel-default">
-                                            <div class="panel-body panel-twitter__body">
-                                                {{--{{ Auth::user()->twitter or 'formvalidation' }}--}}
-                                                <a class="twitter-timeline" data-height="300" data-theme="dark"
-                                                   href="https://twitter.com/{{ Auth::user()->twitter }}">Tweets by
-                                                    TwitterDev</a>
-                                                <script async src="//platform.twitter.com/widgets.js"
-                                                        charset="utf-8"></script>
-                                            </div>
-                                        </div>
-
+                                        @include('includes.twitter-panel')
                                     </div>{{--end panel-twitter--}}
                                 @endif
                         </div>

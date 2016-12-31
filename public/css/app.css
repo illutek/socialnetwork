@@ -7804,7 +7804,11 @@ a:hover {
 
 .post-content .post-content__info {
   font-size: 0.75em;
-  color: #374a67;
+  color: #072134;
+}
+
+.post-content .post-content__info .info-username {
+  font-weight: bold;
 }
 
 .anonymous-content p {
