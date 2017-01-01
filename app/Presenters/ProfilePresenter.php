@@ -2,6 +2,7 @@
 
 namespace App\Presenters;
 
+use Illuminate\Support\Facades\Auth;
 use Laracasts\Presenter\Presenter;
 use Carbon\Carbon;
 
@@ -34,4 +35,5 @@ class ProfilePresenter extends Presenter
     {
         //
     }
+
 }

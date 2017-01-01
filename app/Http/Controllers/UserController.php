@@ -28,6 +28,9 @@ class UserController extends Controller
         return view('user.profile', ['user' => Auth::user()]);
     }
 
+    /**
+     * BCG van de User
+     */
     public function profilebcg()
     {
         return view('user.profilebcg', ['user' => Auth::user()]);

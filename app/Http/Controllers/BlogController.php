@@ -20,9 +20,11 @@ class BlogController extends Controller
         return view('front.index', compact('posts'));
     }
 
-    public function userPosts($user_id){
+    public function userPosts($user_id)
+    {
 
-        return view('front.index')->with('posts', Post::where('user_id' ,$user_id)->orderBy('id', 'decs')->get());
+        return view('front.index')
+            ->with('posts', Post::where('user_id', $user_id)->orderBy('id', 'decs')->get());
     }
 
 
@@ -39,7 +41,7 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -47,17 +49,21 @@ class BlogController extends Controller
         $post = new Post();
         $post->fill($request->only('body'));
 
-        $image_path= 'img/post/';
-        $image = $request->file('post_image');
-        $filename = time() . '.' . $image->getClientOriginalExtension();
-        $path = public_path($image_path . $filename);
+        if ($request->hasFile('post_image')) {
+            $image_path = 'img/post/';
+            $image = $request->file('post_image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $path = public_path($image_path . $filename);
 
 
-        Image::make($image->getRealPath())
-            ->resize(600, null)
-            ->save($path);
+            Image::make($image->getRealPath())
+                ->resize(600, null)
+                ->save($path);
 
-        $post->post_image = $image_path . $filename;
+            $post->post_image = $image_path . $filename;
+        } else {
+            $post->post_image = 'none.png';
+        }
 
         $request->user()->posts()->save($post);
 
@@ -67,7 +73,7 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -78,7 +84,7 @@ class BlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -89,8 +95,8 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -101,7 +107,7 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

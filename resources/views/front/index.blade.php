@@ -6,10 +6,12 @@
     <div class="row">
         {{--Main content--}}
         @if(auth()->check())
+            {{--Wil hier vanaf misschien via een presenter?--}}
             <div class="col-md-6 col-md-push-3">
                 @else
                     <div class="col-md-9 col-md-push-3">
                         @endif
+                        
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 @if(auth()->check())
@@ -25,7 +27,14 @@
                                                 Post Date: {{ $post->present()->createdAt }}
                                             </span><br>
                                             {{ $post->body }}
-                                            <img src="{{ asset($post->post_image) }}" alt="" width="100%" height="auto">
+                                            {{--een if om none.png op te vangen--}}
+
+                                            @if($post->post_image == 'none.png')
+                                                {{ ' ' }}
+                                            @else
+                                                <img src="{{ asset($post->post_image) }}" alt="" width="100%"
+                                                     height="auto">
+                                            @endif
                                             <hr>
                                         @endforeach
                                     </div>
@@ -78,6 +87,7 @@
                                         {{-- end panel-profile--}}
                                     </div>
                                 </div>
+
                                 {{--second sidebar--}}
                                 @if(auth()->check())
                                     {{--Twitter panel by default twitterDev user--}}

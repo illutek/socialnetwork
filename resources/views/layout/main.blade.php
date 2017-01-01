@@ -34,7 +34,7 @@
         @else
         <script>
             $.backstretch([
-                "{{ 'uploads/bcg/'.  (Auth::user()->bcg) }}"
+                "{{ asset('uploads/bcg/'.  (Auth::user()->bcg)) }}"
             ]);
         </script>
     @endif
