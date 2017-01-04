@@ -35,5 +35,7 @@ Route::get('profilebcg', 'UserController@profilebcg')->name('profilebcg');
 Route::post('profilebcg', 'UserController@updateBackground');
 
 
+
+
 // Posts
 Route::resource('posts', 'BlogController');
