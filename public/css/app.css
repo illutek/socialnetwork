@@ -7780,6 +7780,11 @@ a:hover {
   margin-right: 15px;
 }
 
+.avatar-form {
+  border: solid 1px white;
+  padding: 15px;
+}
+
 .user-bcg-img {
   width: 100%;
   height: auto;

@@ -57,7 +57,7 @@ class BlogController extends Controller
 
 
             Image::make($image->getRealPath())
-                ->resize(600, null)
+                ->fit(600)
                 ->save($path);
 
             $post->post_image = $image_path . $filename;
